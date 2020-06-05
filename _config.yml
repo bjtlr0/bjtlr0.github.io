@@ -1,8 +1,12 @@
-theme : jekyll-theme-architect
+# Setup
+name:persik world
+tagline:      A responsive theme for your project on GitHub Pages
+url: "bjtlr0.github.io"
+baseurl:      ""
 
-title : persik world
-name : persik Is Like
-description : "no description about persik world"
+# Gems
+gems:
+  - jekyll-paginate
 
-url : "https://bjtlr0.github.io"
-baseurl : # sub project directory
+#Others
+markdown: kramdown
