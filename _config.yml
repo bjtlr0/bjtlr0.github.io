@@ -10,11 +10,3 @@ gems:
 
 #Others
 markdown: kramdown
-
-# Site Footer
-footer:
-  links:
-    - label: "Github"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/bjtlr0"
-      
