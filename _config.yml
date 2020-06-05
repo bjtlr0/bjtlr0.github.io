@@ -1,6 +1,8 @@
 theme : jekyll-theme-architect
+
 title : persik world
-name : "persik Is Like"
+name : persik Is Like
 description : "no description about persik world"
+
 url : "https://bjtlr0.github.io"
 baseurl : # sub project directory
