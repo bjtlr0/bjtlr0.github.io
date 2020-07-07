@@ -1,22 +1,51 @@
 ---
 layout: post
-title:  "STS 에서 Spring+React를 연동하기 위한 공부.."
+title:  "Spring+React Study"
 date:   2020-07-07 15:40:56
 categories: jekyll update
 ---
 
-*** 목표 ***
+>## 목표
 
- --- `STS에서 Spring Legacy MVC Project를 생성하고 front-end를 React로 구현` ---
+&nbsp;&nbsp;** STS에서 Spring Legacy MVC Project를 생성하고 front-end를 React로 구현 ** 
 
 ***
 
-*** 기술명세 ***
+>## 기술명세 
  * SpringFramework
+ * NodeJS
+ * WebPack
  * React
     
 ***
-* Spring Legacy MVC Project는 기본 JSP를 지원한다.
-* WAS 형태로 웹 어플리케이션을 배포할 수 있다.
-* MainApplication class를 제공해주지 않고 Controller class를 기본 제공한다.
-  
+`
+NodeJS가 설치되어 있어야 Webpack 사용을 위한 modules 설치가 가능하므로 NodeJS를 먼저 설치 후 프로젝트 생성을 진행하자.
+`
+***
+
+작업 순서
+
+1. Spring Legacy MVC Project 생성
+
+    STS 에서 프로젝트 생성 -> Spring Legacy MVC Project를 선택하면 생성할 수 있다.
+
+    legacy 프로젝트를 생성하면 JSP를 View로 사용하는 웹 어플리케이션이 생성된다. 
+
+2. webpack 설치
+
+    webpack은 node_modules 중 디팬던시가 존재하는 모듈을 모아서 빌드한 후 하나의 js파일을 output시켜주는 도구이다.
+
+    webapp경로 하단에 임의의 webpack directory를 생성한 후 cmd창에서 해당 디렉토리로 이동. npm init 명령을 통해 nodejs 모듈을 설치한다.
+
+
+
+해당 경로 하위에 임의의 폴더를 생성 후 webpack에 사용될 node_modules를 설치한다. (자세한 내용은 webpack install  구글링)
+
+기본적으로 사용할 modules를 npm install을 통해 설치하고, package.json 파일에 dependencies, scripts를 작성한다.
+
+dependencies는 의존성이 있는 modules 파일의 이름과 버전,
+scripts는 build 시 수행할 script명령 이름이다.
+
+근데 devDependencies와 Dependencies가 나눠져 있다. 차이점은 나중에 ..
+
+
