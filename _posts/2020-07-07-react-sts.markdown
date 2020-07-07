@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "STS 에서 Spring+React를 연동하기 위한 공부.."
+date:   2020-07-07 15:40:56
+categories: jekyll update
+---
+
+=== 목표 ===
+
+ --- `STS에서 Spring Legacy MVC Project를 생성하고 front-end를 React로 구현` ---
+
+***
+
+=== 기술명세 ===
+ * SpringFramework
+ * React
+    
+***
+* Spring Legacy MVC Project는 기본 JSP를 지원한다.
+* WAS 형태로 웹 어플리케이션을 배포할 수 있다.
+* MainApplication class를 제공해주지 않고 Controller class를 기본 제공한다.
+  
