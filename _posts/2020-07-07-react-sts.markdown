@@ -5,13 +5,13 @@ date:   2020-07-07 15:40:56
 categories: jekyll update
 ---
 
-=== 목표 ===
+*** 목표 ***
 
  --- `STS에서 Spring Legacy MVC Project를 생성하고 front-end를 React로 구현` ---
 
 ***
 
-=== 기술명세 ===
+*** 기술명세 ***
  * SpringFramework
  * React
     
