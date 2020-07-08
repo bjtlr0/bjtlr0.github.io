@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "Delphi "
+date:   2020-07-08 09:35:00
+categories: jekyll update
+---
+
+# 7월 업데이트
+1. 직접설정 기능의 응답없음 현상 확인
+2. 직접설정 내용을 수동진단 결과물로 db에 등록
+
+---
+
+## 이슈
+ > 직접설정 기능의 응답없음 현상
+
+    수동진단에서 직접설정을 통해 사이트에 접근할 때 간헐적으로 응답없음 상태에 빠지는 현상이 발생하는 게 확인됐다.
+
+    아마 응답을 받지 못하거나, navigator의 동작에 오류가 발생한 거 같은데 exception 처리가 제대로 되지 않은 것인지 확인해야 한다.
+
+ > 직접설정 결과를 db에 등록
+
+    이 작업을 하는 이유가 결국 수동진단을 통해 취약점 확인을 하는 것인데, 직접설정을 통해 브라우저 화면과 응답 헤더 및 바디를 확인할 수 있으나 이를 바로 점검 결과에 넣는 기능이 부재하여 실용성이 떨어진다.
+
+---
+
+
+## 작업 내역
+수동점검 내역 저장을 위해 필요한 요소
+
+` Request/Response Headers, ResponseBody, Url, Parameters, ResponseCode, HttpMethod, 취약점 카테고리`
+
+MainForm에 FormCloseQuery를 추가하여 TWebBrowser를 Stop하고 Free하는 구문을 추가하였다.
+
+
+
+
+
+> 예제
+```delphi
+var
+  resHeaders : string; 
+  reqHeaders : string;
+  method : string;
+  query : string;
+  url : string;
+begin
+  
+
+end;
+```
