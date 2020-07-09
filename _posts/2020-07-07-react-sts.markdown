@@ -2,7 +2,6 @@
 layout: post
 title:  "Spring+React Study"
 date:   2020-07-07 15:40:56
-categories: Study
 ---
 ..jekyll update
 ## 목표
