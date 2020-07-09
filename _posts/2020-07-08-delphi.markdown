@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Delphi"
+title:  "7월 유지보수 업데이트"
+categories: [Panic]
 date:   2020-07-08 09:35:00
 ---
 

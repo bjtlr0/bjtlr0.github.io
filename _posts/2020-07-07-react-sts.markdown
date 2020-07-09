@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Spring+React Study"
+title:  "React를 STS에서 만들려면 어째야해??"
+categories : [Study]
 date:   2020-07-07 15:40:56
 ---
 ..jekyll update

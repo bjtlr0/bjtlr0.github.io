@@ -10,3 +10,6 @@ gems:
 
 #Others
 markdown: kramdown
+
+# categories
+category_list: [ Blog, Panic, Study ]
