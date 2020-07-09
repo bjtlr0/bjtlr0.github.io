@@ -6,7 +6,7 @@ title: 버드나무 동
 <div id="home">
   <h1>Blog Posts</h1>
   <ul>
-    {% assign post_list = site.post %}
+    {% assign post_list = site.posts %}
     {% for node in post_list %}
       {% if node.title != null %}
         {% if node.layout == "categories" %}
