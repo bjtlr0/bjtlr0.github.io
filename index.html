@@ -7,11 +7,11 @@ title: 버드나무 동
   <h1>Blog Posts</h1>
   <ul>
     {% assign post_list = site.posts %}
-    {% for node in post_list %}
-      {% if node.title != null %}
-        {% if node.layout == "categories" %}
-          <li><a class="category-link {% if page.url == node.url %} active{% endif %}"
-          href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li>
+    {% for post in post_list %}
+      {% if post.title != null %}
+        {% if post.layout == "categories" %}
+          <li><a class="category-link {% if page.url == post.url %} active{% endif %}"
+          href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
         {% endif %}
       {% endif %}
     {% endfor %} 
