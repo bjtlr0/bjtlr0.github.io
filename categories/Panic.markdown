@@ -1,6 +1,7 @@
 ---
+
 layout: categories
-title:  "Panic"
+title: "Panic"
+
 ---
 
-{{ contents }}

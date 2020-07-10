@@ -8,8 +8,13 @@ baseurl:      ""
 gems:
   - jekyll-paginate
 
+# Plugins
+plugins:
+  - bundler
+  # - rake
+  # - public_suffix
+  # - addressable
+  # - ffi
+  # - rb-fsevent
 #Others
 markdown: kramdown
-
-# categories
-category_list: [ Blog, Panic, Study ]

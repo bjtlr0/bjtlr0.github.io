@@ -1,6 +1,7 @@
 ---
+
 layout: categories
-title:  "Blog"
+title: "Blog"
+
 ---
 
-{{ contents }}

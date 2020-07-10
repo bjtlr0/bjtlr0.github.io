@@ -1,6 +1,7 @@
 ---
+
 layout: categories
-title:  "Study"
+title: "Study"
+
 ---
 
-{{ contents }}

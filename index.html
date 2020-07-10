@@ -5,24 +5,29 @@ title: 버드나무 동
 
 <div id="home">
   <h1>Blog Posts</h1>
-  <ul>
-    {% assign post_list = site.posts %}
-    {% for post in post_list %}
-      {% if post.title != null %}
-        {% if post.layout == "categories" %}
-          <li><a class="category-link {% if page.url == post.url %} active{% endif %}"
-          href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+  
+    <ul>
+      {% assign pages_list = site.pages %}
+      
+      {% for node in pages_list %}
+        
+        {% if node.title != null %}
+          
+          {% if node.layout == "categories" %}
+          {{node.url}}
+            <li>
+              <a class="category-link {% if page.url == node.url %} active {% endif %}"
+            href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li>
+          {% endif %}
         {% endif %}
-      {% endif %}
-    {% endfor %} 
-  </ul>
-</div>
-
+      {% endfor %} 
+    </ul>
+  
 <!--
   <ul class="posts">
     {% for post in site.posts %}
       <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
-</div>
 -->
+</div>
