@@ -2,12 +2,12 @@
 layout: default
 ---
 
-<ul class="posts-list">
+<ul class="posts-list" style="list-style:none;">
     {% assign category = page.categories | default: page.title %}
     {% for post in site.categories[category] %}      
       <li>
         <h3>
-          <a href="{{ site.baseurl }}{{ post.url }}">
+          <a href="{{ site.baseurl }}{{ post.url }}" style="color:brown">
             {{ post.title }}
           </a>
           <small>{{ post.date | date_to_string }}</small>

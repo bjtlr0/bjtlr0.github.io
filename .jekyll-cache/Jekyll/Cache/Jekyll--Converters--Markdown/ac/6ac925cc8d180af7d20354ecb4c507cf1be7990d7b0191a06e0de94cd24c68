@@ -1,0 +1,33 @@
+I"}<h2 id="작업-스케치-노트">작업 스케치 노트</h2>
+<p>악… ssl 에러가 발생하는데..</p>
+
+<p>아래처럼 하면 될리가 없나 …?</p>
+
+<pre><code class="language-delphi">var
+    indyHttp : TIdHttp;
+    ioHandler : TIdSSLIOHandlerSocket;
+begin
+    //~~ blar
+    indyHttp.URL.Protocol := 'HTTPS';
+    ioHandler := TIdSSLIOHandlerSocket.Create(indyHttp);
+    ioHandler.SSLOPtions.Method := sslvTLSv1;
+    indyHttp.IOHandler := ioHandler;
+    // ~~blar
+end;    
+</code></pre>
+
+<p>암튼 첫번째 접속 시도 시 Could Not load OpenSSL Library 였나.. 이런 에러난다.</p>
+
+<p>libeay32.dll, ssleay32.dll은 exe파일과 같이 있는데 뭐가 문젤까?</p>
+
+<p>그거 무시하고 동일한 함수를 한번 더 실행하면(첫번째 작업 끝 http객체 free선언됨) 두번째 접속 시도를 하면 어케 통신이 되는것처럼(req header와 res header가 나옴) 보이는데, 뭔일이고?? 뭐야 머지..</p>
+
+<hr />
+
+<h2 id="작업-내역">작업 내역</h2>
+<ul>
+  <li>errorMessage를 추가했다.</li>
+  <li>폼 닫을 때 free를 안해서 메모리 누수되던 부분 찾아서 없앰.</li>
+</ul>
+
+:ET

@@ -4,20 +4,19 @@ title: 버드나무 동
 ---
 
 <div id="home">
-  <h1>Blog Posts</h1>
+  <h2>Categories</h2>
   
-    <ul>
+    <ul style="list-style:none;">
       {% assign pages_list = site.pages %}
       
       {% for node in pages_list %}
         
         {% if node.title != null %}
           
-          {% if node.layout == "categories" %}
-          {{node.url}}
+          {% if node.layout == "categories" %}          
             <li>
               <a class="category-link {% if page.url == node.url %} active {% endif %}"
-            href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li>
+            href="{{ site.baseurl }}{{ node.url }}"><h1>{{ node.title }}</h1></a></li>
           {% endif %}
         {% endif %}
       {% endfor %} 
