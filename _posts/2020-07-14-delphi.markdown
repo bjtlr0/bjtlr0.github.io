@@ -1,0 +1,71 @@
+---
+layout: post
+title: "7월 유지보수 업데이트(4)"
+categories: [Panic]
+date: 2020-07-14 10:30:00
+---
+
+## 작업 스케치 노트
+저장 완료 시 결과 리스트를 갱신하도록 수정 완료~~
+
+FS4_URLList라고 미리 만들어둔 함수가 있어서 가져다 사용함.
+
+근데 이거 하다보니까, 카테고리가 동일한 점검 결과는 수동저장 시 하나만 저장되네..? 문제다.
+
+점검 결과를 저장하고 나면 완료 메시지를 띄우자!
+
+접속 불가 호스트에 대한 IndySocket Error => 10060
+
+아.. IndyHttp에서 통신오류가 발생하는 경우가 많다. 사실 당연한건데 이거를 고대로 보여주지 말고 에러 타입을 캐치해서 알아들을 수 있도록 변경해서 뿌려주는게 좋겠다.
+
+```delphi
+on error: EIdSocketError do
+      begin
+        case error.LastError of
+          10050 : begin
+            errorMsg := '네트워크를 확인할 수 없습니다.';
+          end;
+          10051 : begin
+            errorMsg := '현재 네트워크를 통해 대상에 접근할 수 없습니다.';
+          end;
+          10054 : begin
+            errorMsg := '대상 서버에서 연결을 강제로 종료하였습니다.';
+          end;
+          10060 : begin
+            errorMsg := '대상 서버 연결시도 중 타임아웃이 발생하였습니다.' + #13#10 + 'Protocol 또는 url을 확인하여 주십시오.';
+          end;
+          10064 : begin
+            errorMsg := '대상 서버의 네트워크가 활성화되지 않았습니다.';
+          end;
+          10091 : begin
+            errorMsg := '현재 시스템의 네트워크가 존재하지 않습니다.';
+          end;
+          11001 : begin
+            errorMsg := '현재 호스트가 유효하지 않습니다.';
+          end;
+          10061 : begin // Connection Refused
+            errorMsg := '연결이 거부되었습니다. 호스트 주소 또는 포트번호를 확인해주십시오.';
+          end;
+        else
+          errorMsg := error.Message;
+        end;
+
+```
+
+아 근데 위처럼 스트링을 그냥 쓰는것보다 resourceString으로 선언해주는게 나은거 같기도 ..
+
+악.. 객체 .free안한곳 발견 ㅂㄷㅂㄷ.. 처리했다.
+
+
+---
+
+## 작업 내역
+ - errorMessage를 추가했다.
+ - 폼 닫을 때 free를 안해서 메모리 누수되던 부분 찾아서 없앰.
+
+
+
+
+
+
+

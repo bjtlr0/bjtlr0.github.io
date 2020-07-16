@@ -3,7 +3,7 @@ name: persik world
 tagline:      A responsive theme for your project on GitHub Pages
 url: "bjtlr0.github.io"
 baseurl:      ""
-
+future: "true"
 # Gems
 gems:
   - jekyll-paginate

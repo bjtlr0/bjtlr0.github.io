@@ -1,0 +1,28 @@
+I"�<h2 id="작업-스케치-노트">작업 스케치 노트</h2>
+
+<p>일단 db에 넣어야 하는 내용들을 정리해야 한다.
+수동으로 점검 시 알아낼 수 있는 정보들 중 result db에 들어가야 하는 항목은 아래.</p>
+
+<p>result db 필수요소 : Request/Response Headers, ResponseBody, Url, Parameters, ResponseCode, HttpMethod, 취약점 카테고리</p>
+
+<p>수동점검 내역을 저장할 때 사용자에게 표시하고 confirm을 받아야 한다.
+필수요소를 어떻게 표시할건지?? ==&gt; messageBox또는 또 다른 DialogForm겠지.</p>
+
+<p>messageBox보다는 dialogForm이 더 효율적이다. 
+and..</p>
+
+<p>아 근데 그러고보니 이미 수동점검 결과 저장하는 폼이 있는데 그걸 그냥 갖다쓰면 되지 않을까????
+..</p>
+
+<p>그 녀석을 좀 손봐서 재사용 하도록 하자!</p>
+
+<hr />
+
+<h2 id="작업-내역">작업 내역</h2>
+<ul>
+  <li>테스트용 SaveTestForm 어플리케이션을 생성해서 ManualSettingForm을 onShow하도록 셋팅.</li>
+  <li>점검결과 저장버튼 ManualSettingForm에 추가.</li>
+  <li>ManualSettingForm에 saveBtn을 넣고 ManualResultSaveForm을 onShow하도록 셋팅.</li>
+</ul>
+
+:ET

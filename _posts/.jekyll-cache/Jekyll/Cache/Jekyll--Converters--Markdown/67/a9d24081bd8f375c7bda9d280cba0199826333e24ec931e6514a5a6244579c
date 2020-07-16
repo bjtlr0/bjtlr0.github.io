@@ -1,0 +1,63 @@
+I"�
+<h1 id="ole-란">OLE 란?</h1>
+<blockquote>
+  <p>Object Linking and Embedding</p>
+</blockquote>
+
+<p>Delphi에서 spreadSheet나 WebBrowser의 Documents를 이용할 때 종종 OleObject라는 놈이 보이는데, 여기서 쓰이는 Ole가 무엇일까?</p>
+
+<p>단어의 사전적 의미는 Object Linking and Embedding의 약자로써 어플리케이션 간의 데이터를 공유하는 방법(method)이다.</p>
+
+<p>Ole의 구현을 위해 2개의 서로 데이터를 공유할 어플리케이션이 필요하며, 1개 어플리케이션은 __ole server__가 되어야하고, 다른 하나의 어플리케이션은 __ole container__가 되어야 한다.</p>
+
+<p>여기서 2개의 application에서 OleObject는 두 개의 어플리케이션에 공유되는 데이터 객체로 정의된다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OLE Server : OLE object를 만들고 수정할 수 있는 어플리케이션
+OLE Container : OLE object를 싣을 수 있는 어플리케이션
+</code></pre></div></div>
+
+<p>예를 들면 ‘HTML Documents’, ‘Spreadsheet’, ‘pictures’와 같은 어플리케이션이다.</p>
+
+<p>델파이에서는 VCL의 OleCtrls unit을 통해 OleObject를 컨트롤 할 수 있다.</p>
+
+<p>아래 예제는 HtmlDocuments를 TWebBrowser로부터 받아오기 위해서 OleCtrls의  OleObject property를 사용하는 소스이다.</p>
+
+<blockquote>
+  <p>예제 ) Document Ole Object
+```delphi
+procedure TSomeWebBrowserUnit.btnViewDocuments(Sender: TObject);
+var
+    resBody : String;
+    customWeb : TWebBrowser;
+begin
+    // blar blar~~
+    if customWeb.document as IHtmlDocument2 &lt;&gt; nil then
+    begin
+        resBody := customWeb.<strong>OleObject</strong>.Document.DocumentElement.outerHTML;
+    // blar~~
+    end;
+end;</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+delphi의 rtl 라이브러리의 ComObj.pas를 살펴보면 CreateOleObject(const ClassName: string): IDispatch; 함수를 지원하여 OleObject application이름을 지정하여 OleApplication을 생성할 수 있도록 해준다.
+
+아래 예제는 CreateOleObject에 Excel.Application 명을 지정하여 OleObject 객체를 생성하는 소스이다.
+
+&gt; 예제 ) Excel.Application Ole Object
+```delphi
+procedure TSomeExcelUnit.btnActiveSheet(Sender: TObject);
+var
+    OleApplication : Variant;
+    OleWorkSheet : Variant;
+begin
+    // ~~~ blar
+    OleApplication := CreateOleObject('Excel.Application');
+    OleWorkSheet := OleApplication.ActiveSheet;
+    // ~~~ blar
+end;
+
+</code></pre></div></div>
+
+<p>그래서??? – to be continue…</p>
+:ET
