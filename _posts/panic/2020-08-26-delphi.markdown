@@ -1,0 +1,28 @@
+---
+layout: post
+title: "8월 유지보수 업데이트"
+categories: [Panic]
+date: 2020-08-26 10:40:00
+---
+
+## 작업 스케치 노트
+8월에는 CEF4 라이브러리를 통한 Chrome브라우저 미리보기 기능을 적용하고 테스트 해봐야 한다.
+
+8월에 적용할 것은 아니고 .. 최대한 빠를수록 좋다.
+
+일단 업데이트 할 항목은 URL수집 점검 중 email주소가 너무 많이 수집되서 오탐이 많은 부분을 없애기 위해 email exclude 메뉴를 추가할 거다.
+
+기존의 URL IN/EXclude 항목이 있었기 때문에 틀은 거의 동일하다.
+
+기존 점검옵션의 in/exclude항목을 체크하는 구문에서 emailExclude를 포함하려 했는데,
+
+애초에 하드코딩 패턴파일 내부에서 extractEmail과 관련된 함수가 있어서 여기서 점검예외를 처리하기로 했다.
+
+소스코드에서 2020-08로 검색하면 작업한 내용이 쫙 나오니까 참고!
+
+
+## 작업 내역
+ - ExcludeStrs 추가
+ - UseExcludeFlag 추가
+ - 점검옵션 파일을 확인하여 EmailStrs와 EnableEmailExclude 항목을 추가
+ - extractEmail을 체크하는 함수에서 exclude 로직을 추가
