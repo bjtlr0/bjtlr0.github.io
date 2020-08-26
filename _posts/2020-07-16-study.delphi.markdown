@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "delphi OpenSSL"
+categories : [Study]
+date:   2020-07-16 16:53:56
+---
+
+indyHttp를 사용할 때 문제가 발생해..
+
+요즘에 delphi에서 ssl통신을 구현할 땐 서드파티인 indy를 쓰지 않고 HTTPClient 컴포넌트를 쓴다고 하네 ..
+
+얘를 쓰면 따로 lib을 다운받아서 적용할 필요 없이 네이티브ssl library를 가지고 있어서 그걸로 통신한데.
+
+근데 어찌 쓰는걸까?
+
